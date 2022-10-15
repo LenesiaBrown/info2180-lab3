@@ -1,7 +1,9 @@
 const emptyBox = [null, null, null, null, null, null, null, null, null]
-const playerX = "X";
+const playerX = "X"; //document.getElementsByTagName(".square.X");
 const playerO = "O";
 let firstPlay = playerX;
+const boardsss = document.getElementById("board");
+//let playeroturn = false;
 
 //Excercise 1
 window.onload = function(){   
@@ -9,14 +11,14 @@ window.onload = function(){
         document.getElementsByTagName("div")[n].setAttribute("id", n);
         let box1 = document.getElementById(n);
         box1.classList.add("square"); 
+        box1.addEventListener("mouseover", function(){
+            box1.classList.add("hover");
+        })
+        box1.addEventListener("mouseout", function(){
+            box1.classList.remove("hover");
+        })
+        
     }
-    
-
-    // gameBoxes.forEach(box => {
-    //     box.addEventListener("click", forClick, {once : true})
-    //     console.log(box);
-    
-    // })
     
    
 
@@ -26,9 +28,8 @@ window.onload = function(){
 
     gameBoxes.forEach(box => {
         box.addEventListener("click", forClick)
-    });
-    // const boards = Array(gameBoxes.length);
-    // boards.fill(null);
+    });   
+
     
 }
 
